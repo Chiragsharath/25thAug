@@ -2,7 +2,7 @@
 <widget id="com.happyme.hopi" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Hopi</name>
     <description>The best student friendly app</description>
-    <author email="contact@gurutu.in" href="https://gurutu.in/">Gurutu Team</author>
+    <author email="contact@gurutu.in" href="https://gurutu.in/">Team Gurutu</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
