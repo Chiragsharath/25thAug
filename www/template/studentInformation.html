@@ -19,26 +19,30 @@
 <div class="card">
   <div class="item item-text-wrap headingCart backgroundHeadingColor">
     <div class="row" style="text-align: center;">
-      <div class="col colorTextHed fontStyle" id="getwidth"><span >First Name : </span></div>
-      <div class="col colorTextHed fontStyle" id="getwidth"><span >Last Name : </span></div>
-      <div class="col colorTextHed fontStyle" ><span >Email Id : </span></div>
+      <div class="col colorTextHed fontStyle" ng-click="filter('name')"><span >First Name : </span></div>
+      <div class="col colorTextHed fontStyle" ng-click="filter('lastName')"><span >Last Name : </span></div>
+      <div class="col colorTextHed fontStyle" ng-click="filter('email')"><span >Email Id : </span></div>
     </div>
   </div>
  <!-- <button class="button button-positive" style="background-color: #fff;">-->
-    <div class="item item-text-wrap backgroundColor" style="font-size: 12px; background-color: #fff;" ng-repeat="s in studentListInformation | orderBy:'name'" ng-click="sideNavStudentTaskInformation(s.id,s.name)">
+    <div class="item item-text-wrap backgroundColor" style="font-size: 12px; background-color: #fff;" ng-repeat="s in studentListInformation | orderBy:filterValue" ng-click="sideNavStudentTaskInformation(s.id,s.name)">
       <div class="row">
-        <div class="col colorText fontStyle"  style="text-align:center;">
+        <div class="col-33 colorText fontStyle"  style="text-align:center;">
           {{s.name}}
         </div>
-        <div class="col colorText fontStyle"  style="text-align:center;">
+        <div class="col-33 colorText fontStyle"  style="text-align:center;">
           {{s.lastName}}
         </div>
-        <div class="col colorText fontStyle" style="text-align:center;">
+        <div class="col-33 colorText fontStyle" style="text-align:center;">
           {{s.email}}
         </div>
       </div>
     </div>
   <!--</button>-->
+</div>
+<div class="row">
+    <div class="col" id="getwidth"></div>
+    <div class="col" ></div>
 </div>
 </ion-content>
 <md-sidenav md-component-id="sideStudentInformation" class="md-sidenav-right" style="min-width: 100%;">
@@ -48,8 +52,9 @@
     <h1 class="title colorTextHed fontStyle" style="text-align: center;"> {{name}}</h1>
   </ion-header-bar>
   <br>
-  <br>
-  <div class="row">
+  <br> <br>
+  <br> 
+  <div class="row has-subheader">
     <div class="col fontStyle"><b>Select Date</b>
       <input  type="date" ng-style="dateStyle"  ng-model="datevalue">
     </div>
